@@ -48,5 +48,13 @@
       </form>
       {{ship_resp}}
     </div>
+
+    <div id="del-ship"> 
+      <form action="/del-ship" method="POST">
+        <input type="text" name="name" placeholder="shipment to delete">
+        <input type="submit" name="action" value="delete shipment">
+      </form>
+      {{del_ship_resp}}
+    </div>
 </body>
 </html>

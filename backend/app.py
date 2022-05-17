@@ -51,6 +51,13 @@ def create_ship():
     else:
       text = create_edit_shipment(data["ship"], data["inv"], data["amount"], create=False)
     return render_template('index.html', ship_resp=text)
+
+@app.route('/del-ship', methods=['POST'])
+def del_ship():
+  if request.method == "POST":
+    data = request.form.to_dict()
+    text = del_shipment(data["name"])
+    return render_template('index.html', del_ship_resp=text)
     
 if __name__ == "__main__":  # Makes sure this is the main process
 	app.run( # Starts the site
