@@ -24,6 +24,10 @@ The `.replit` file should contain the following lines:
 language = "python3"
 run = "python3 backend/app.py"
 ```
+
+### Controls
+Enter an integer to replace the current value, or enter an integer preceeded by a + or - (e.g. +4, -6) to add or subtract from the current value.
+
 ## Features
 The app fulfills basic CRUD functionality. Furthermore, it is possible to create "shipments" and assign existing inventories to them (which automatically adjusts the inventory as well). 
 
