@@ -1,18 +1,17 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request
 from flask_cors import CORS
 from server import *
-import json
 
 app = Flask("app",
   template_folder="../templates", # name of folder containing html templates
-  static_folder="static" # name of folder for static files
+  static_folder="../static" # name of folder for static files
 )
 CORS(app)
 
 @app.route('/')  # '/' for the default page
 def home():
-    init_db()
-    return render_template('index.html')
+  init_db()
+  return render_template('index.html')
 
 @app.route('/list-inv', methods=['GET'])
 def get_inv():
