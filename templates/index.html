@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<header>
+    <title>INVENTORY APP</title>
+</header>
+<body>
+    <div>Welcome to the inventory app!</div>
+    <div><span>Last update: </span><span id="time-container"></span></div>
+    <div id="result-container"></div>
+
+    <div id="get-inv"> 
+      <form action="/list-inv" method="GET">
+        <input type="submit" value="get inventory data">
+      </form>
+      {{inv}}
+    </div>
+
+    <div id="get-ship"> 
+      <form action="/list-ship" method="GET">
+        <input type="submit" value="get shipment data">
+      </form>
+      {{ship}}
+    </div>
+  
+    <div id="create-inv"> 
+      <form action="/create-inv" method="POST">
+        <input type="text" name="name" placeholder="inventory to create/edit">
+        <input type="text" name="amount" placeholder="amount (integer)">
+        <input type="submit" name="action" value="create inventory">
+        <input type="submit" name="action" value="edit inventory">
+      </form>
+      {{create_inv_resp}}
+    </div>
+
+    <div id="del-inv"> 
+      <form action="/del-inv" method="POST">
+        <input type="text" name="name" placeholder="inventory to delete">
+        <input type="submit" name="action" value="delete inventory">
+      </form>
+      {{del_inv_resp}}
+    </div>
+
+    <div id="create-ship"> 
+      <form action="/create-ship" method="POST">
+        <input type="text" name="ship" placeholder="shipment to create/edit">
+        <input type="text" name="inv" placeholder="inventory to place">
+        <input type="text" name="amount" placeholder="amount (integer)">
+        <input type="submit" name="action" value="create shipment">
+        <input type="submit" name="action" value="edit shipment">
+      </form>
+      {{ship_resp}}
+    </div>
+</body>
+</html>
